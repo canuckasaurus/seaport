@@ -139,6 +139,16 @@ const config: HardhatUserConfig = {
       throwOnCallFailures: false,
       allowUnlimitedContractSize: false,
     },
+    hedera: {
+      url: process.env.HEDERA_MAINNET_URL ?? "https://mainnet.hashio.io/api",
+      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
+      chainId: 295,
+    },
+    hedera_testnet: {
+      url: process.env.HEDERA_TESTNET_URL ?? "https://testnet.hashio.io/api",
+      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
+      chainId: 296,
+    },
     verificationNetwork: {
       url: process.env.NETWORK_RPC ?? "",
     },
